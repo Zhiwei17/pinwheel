@@ -20,6 +20,11 @@ body {
   border-radius: 2rem;
 }
 
+#range-slider {
+  width: 100%;
+  max-width: 300px;
+}
+
 /*** Animation ***/
 .rotating {
   animation: spin 0.5s linear infinite;

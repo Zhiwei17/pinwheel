@@ -15,7 +15,16 @@ function setWinZone(percent) {
 var randomAngle = Math.random() * 360;
 document.getElementById('win-zone').setAttribute('transform', `rotate(${randomAngle} 150 150)`);
 
-setWinZone(5);
+
+let rangeSlider = document.getElementById('range-slider');
+let rangeChangeValueText = document.getElementById('chance-value');
+setWinZone(rangeSlider.value);
+
+rangeSlider.addEventListener("input", function() {
+    setWinZone(this.value);
+    rangeChangeValueText.innerHTML = this.value+'%';
+});
+
 
 document.getElementById('spin-button').addEventListener('click', () => {
 
@@ -80,3 +89,9 @@ function animateRotation() {
 
 // Call function to start rotation animation
 animateRotation();
+
+// TODO:
+// poder mover el win-zone
+// la segunda vez que haces girar que empieza por la pos actual del arrow
+// feedback al ganar
+// refactor + +css
