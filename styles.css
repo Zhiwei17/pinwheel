@@ -1,15 +1,82 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #343434;
 }
 
-h1 {
-    color: #f0f0f0;
+#spin-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #F2F3F4;
+  /* #Anti-flash White */
+  border-radius: 2rem;
 }
+
+/*** Animation ***/
+.rotating {
+  animation: spin 0.5s linear infinite;
+}
+
+.stopped {
+  animation: spin-stop 1s ease-out forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-stop {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(var(--random-deg, 0deg));
+  }
+}
+
+/*** END: Animation ***/
+
+/*** SVG ***/
+#svg-container {
+  width: 300px;
+  height: 300px;
+}
+
+#wheel {
+  fill: #3D5A80;
+  stroke-width: 6;
+}
+
+#win-zone {
+  /* Smooth transition of offset */
+  transition: stroke-dashoffset 0.5s ease;
+
+  stroke: #e34234;
+  stroke-width: 6;
+  fill: none;
+}
+
+#arrow {
+  stroke: #F2F3F4;
+  stroke-width: 4;
+
+  /* Origin point at the center of the circle */
+  transform-origin: 150px 150px;
+}
+
+/*** END: SVG ***/

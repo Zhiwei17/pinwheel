@@ -4,8 +4,8 @@
     "start_url": "/pinwheel/",
     "scope": "/pinwheel/",
     "display": "standalone",
-    "background_color": "#333333",
-    "theme_color": "#ffffff",
+    "background_color": "#343434",
+    "theme_color": "#3D5A80",
     "icons": [
         {
             "src": "icon/icon-192x192.png",
